@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car Animation</title>
+    </head>
+    <style>
+        canvas {
+        border: none;
+        margin: 15%;
+        }
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+        .istitle {
+            color: rgb(255, 255, 255);
+            width: 265px;
+            margin: 0 auto;
+        }
+        hr {
+            height: 5px;
+            background: linear-gradient(to right, rgb(26, 26, 26), rgb(255, 255, 255), rgb(26, 26, 26));
+            border: none;
+        }
+        ol {
+            list-style-type: circle;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+    <body>
+        <h1 class="istitle">Car Animation</h1>
+        <hr/>
+        <canvas id="canvas" width="600" height="400"></canvas>
+        <script>
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            const wheel1 = { x: 150, y: 300, angle: 0 };
+            const wheel2 = { x: 450, y: 300, angle: 0 };
+            let lightCounter = 0;
+            let lightOn = false;
+
+            const drawRect = (x, y, w, h) => {
+            ctx.fillRect(-w / 2 + x, -h / 2 + y, w, h);
+            };
+
+            const drawLight = (x, y, on) => {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.strokeStyle = on ? "yellow" : "gray";
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(20, 0);
+            ctx.stroke();
+            ctx.restore();
+            };
+
+            const drawWheel = (wheel) => {
+            const { x, y, angle } = wheel;
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.fillStyle = "green";
+            drawRect(0, 0, 50, 50);
+            [...Array(4)].forEach((_, i) => {
+                ctx.beginPath();
+                ctx.rect([-15, 15, -15, 15][i], [-15, -15, 15, 15][i], 10, 10);
+                ctx.fill();
+            });
+            ctx.restore();
+            wheel.angle += 0.1;
+            };
+
+            const drawCar = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "blue";
+            drawRect(300, 250, 400, 100);
+            drawLight(330, 220, lightOn);
+            drawLight(420, 220, lightOn);
+            drawWheel(wheel1);
+            drawWheel(wheel2);
+            ctx.fillStyle = "white";
+            drawRect(350, 220, 100, 70);
+            lightCounter++;
+            if (lightCounter >= 10) {
+                lightCounter = 0;
+                lightOn = !lightOn;
+            }
+            requestAnimationFrame(drawCar);
+            };
+
+            requestAnimationFrame(drawCar);
+        </script>
+    </body>
+</html>
