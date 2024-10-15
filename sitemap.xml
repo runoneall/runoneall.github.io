@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://runoneall.github.io/article/MiWiFi-3G-R3G-%E4%B8%80%E7%AB%99%E5%BC%8F%E5%88%B7%E6%9C%BA.html</loc>
+    
+    <lastmod>2024-10-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://runoneall.github.io/article/%E9%80%9A%E8%BF%87Github-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B.html</loc>
     
     <lastmod>2024-10-10</lastmod>
@@ -32,15 +41,6 @@
     <loc>https://runoneall.github.io/article/%E5%8D%9A%E5%AE%A2%E9%95%9C%E5%83%8F%E7%AB%99%E5%AE%8C%E6%88%90.html</loc>
     
     <lastmod>2024-09-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://runoneall.github.io/article/MiWiFi-3G-R3G-%E4%B8%80%E7%AB%99%E5%BC%8F%E5%88%B7%E6%9C%BA.html</loc>
-    
-    <lastmod>2024-09-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -148,7 +148,7 @@
 
   <url>
     <loc>https://runoneall.github.io/</loc>
-    <lastmod>2024-10-11</lastmod>
+    <lastmod>2024-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
